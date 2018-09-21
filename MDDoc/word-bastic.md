@@ -1,8 +1,12 @@
 # 持之以恒，方能水滴石穿！
 Detailed Architecture    详细框架
-Cryptography        密码使用法，密码系统，密码术;
+
+Cryptography        密码使用法，密码系统，密码术
+
 terminated properly 适当终止
+
 developer was not terminated properly recovery developer; 开发者检查到没有适当终止的的文件，恢复文件
+
 immediate   立即 deferred延时
 
 alias 别名
