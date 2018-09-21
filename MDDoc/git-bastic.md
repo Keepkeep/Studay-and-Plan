@@ -3,7 +3,7 @@
 ## 目录
 #### 概念
 
-![git.text](./IMG/work/git.jpg)
+![](../IMG/work/git.jpg)
 
 - master: 默认开发分支                
 - origin: 默认远程版本库                   
