@@ -4,6 +4,8 @@
 
 
 ## 目录
+####  Git
+- [GIT](./MDDoc/git-bastic.md)
 ####  MySQL
 - [MySQL基础入门](MySQL-basic.md)
 
@@ -12,6 +14,8 @@
 
 ####  学单词
 - [单词本](./MDDoc/word-bastic.md)
+
+
 
 
 
