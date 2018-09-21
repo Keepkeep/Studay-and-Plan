@@ -11,7 +11,7 @@
 - [Spring基础入门](./MDDoc/Spring-basic.md)
 
 ####  学单词
-- [单词本](./MDDoc/word.md)
+- [单词本](./MDDoc/word-bastic.md)
 
 
 
