@@ -81,6 +81,25 @@ git config [--global] user.emial "[emial address]"
 
 推送所有分支到远程仓库: `git push [remote] --all`
 
+#### 分支                  
+显示所有本地分支： `git branch`
+
+列出所有远程分支： `git branch -r`
+
+列出所有本地分支和远程分支： `git branch -a`
+
+创建一个新分支，但是依然停留在当前分支： `git branch [branch-name]`
+
+新建一个分支，与指定的远程分支建立追踪关系： `git branch --track [branch] [remote-branch]`
+
+删除分支： `git branch -d [branch-name]`
+
+删除远程分支：         
+```
+git push origin --delete [branch-name]          
+git branch -dr [remote/branch]
+```
+
 
 #### 版本回退
 撤销工作目录中所有未提交的文件的修改内容： `git reset --head HEAD`
