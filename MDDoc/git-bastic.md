@@ -2,7 +2,7 @@
 
 ## 目录
 #### 概念
-![git.text](./IMG/work/git.png)
+![Image text](./IMG/work/git.png)
 - master: 默认开发分支                
 - origin: 默认远程版本库                   
 - Index / Stage：暂存区                 
