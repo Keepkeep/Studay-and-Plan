@@ -1,5 +1,4 @@
-#持之以恒，方能水滴石穿！
-## 
+# 持之以恒，方能水滴石穿！
 Detailed Architecture    详细框架
 Cryptography        密码使用法，密码系统，密码术;
 terminated properly 适当终止
