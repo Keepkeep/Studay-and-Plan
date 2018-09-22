@@ -57,7 +57,7 @@ contextConfigLocation是ContextLoaderListener类的属性.
 例如我们ModelAndView中存放的视图名为"user"(逻辑视图),通过ViewResolver(视图解析器),解析为"/WEB-INF/user.jsp"(物理视图).
   * 5.前端控制器进行视图渲染,将模型数据填充到Request 域中.
   * 6.前端控制器向用户响应结果.
-	>>6.1 Spring MVC前端控制器配置
+	>6.1 Spring MVC前端控制器配置
 	```xml
 	<servlet>
 		<servlet-name>springMVC</servlet-name>
@@ -73,14 +73,14 @@ contextConfigLocation是ContextLoaderListener类的属性.
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	```
-	>>>如果不配置contextConfigLocation默认加载的是/WEB-INF/servlet名称-servlet.xml.例如:springMvc-servlet.xml.
+	>如果不配置contextConfigLocation默认加载的是/WEB-INF/servlet名称-servlet.xml.例如:springMvc-servlet.xml.
 	* url-pattern配置有三种:
 	* 1.*.do 访问以.do结尾的由DispatcherServlet进行解析.
 	* 2./(斜杠) 所有访问的地址都由DispatcherServlet进行解析,对于静态的文件解析需要配置,不让DispatcherServlet进行解析.
 	>>>>注意:使用此种方式可以实现 RESTful风格的url.
 	3./* 这样配置不对,使用这种配置,最终要转发到一个jsp页面时,仍然会由DispatcherServlet进行解析,但是不能根据这个jsp页面找 到handler所以会报错.
 	
-#### 6.2 Spring-DispatcherServler源码分析
+  >6.2 Spring-DispatcherServler源码分析
 - 通过前端控制器源码分析Spring mvc执行过程.
 
 - 第一步:前端控制器接收请求,会调用doDispatch方法.
@@ -155,3 +155,49 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
 		}
 	}
 ```
+- 第二步:前端控制器调用处理器映射器,来查找Handler
+```java
+//Determine handler for the current request.
+mappedHandler = getHandler(processedRequest);
+if (mappedHandler == null || mappedHandler.getHandler() == null) {
+	noHandlerFound(processedRequest, response);
+		return;
+	}
+```
+- 调用这个方法来返回一个HandlerExecutionChain对象,我们继续跟踪源码发现最后执的是：AbstractHandlerMapping类中的方法
+
+```java
+	@Override
+	public final HandlerExecutionChain getHandler(HttpServletRequest request) throws Exception {
+		Object handler = getHandlerInternal(request);
+		if (handler == null) {
+			handler = getDefaultHandler();
+		}
+		if (handler == null) {
+			return null;
+		}
+		// Bean name or resolved handler?
+		if (handler instanceof String) {
+			String handlerName = (String) handler;
+			handler = getApplicationContext().getBean(handlerName);
+		}
+		HandlerExecutionChain executionChain = getHandlerExecutionChain(handler, request);
+		if (CorsUtils.isCorsRequest(request)) {
+			CorsConfiguration globalConfig = this.corsConfigSource.getCorsConfiguration(request);
+			CorsConfiguration handlerConfig = getCorsConfiguration(handler, request);
+			CorsConfiguration config = (globalConfig != null ? globalConfig.combine(handlerConfig) : handlerConfig);
+			executionChain = getCorsHandlerExecutionChain(request, executionChain, config);
+		}
+		return executionChain;
+	}
+```
+* 返回 HandlerExecutionChain 后
+* 第三步:调用处理器适配器执行Handler,并返回ModelAndView
+```java
+// Actually invoke the handler.
+   mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+```
+
+
+
