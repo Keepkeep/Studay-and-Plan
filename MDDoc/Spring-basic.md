@@ -46,3 +46,15 @@ contextConfigLocation是ContextLoaderListener类的属性.
 ![](../IMG/spring/spring_prefix.jpg)
 >如果配置了前缀和后缀,我们的TestController这个Handler中的modelAndView.setViewName("/WEB-INF/jsp/test.jsp");改为modelAndView.setViewName("test")
 
+#### 6.spring MVC
+* Spring MVC 虽然说是与Spring 无缝集成 但是配置还是单独分开的 ，也就有了之后的父子容器一说。先说下spring 的流程如图：
+![](../IMG/spring/spring_mvc.jpg)
+  * 1.用户发起请求到前端控制器(DispatcherServler),前端控制器负责接收用户请求与响应.
+  * 2.前端控制器调用HandlerMapping(处理器映射器),找到URL所对应的Handler.并返回一个HandlerExecuteChain对象.其中包含有拦截器链与URL对应的Handler.
+也就是说HandlerMapping主要是帮我们查找要Handler,并返回一个HandlerExecutChain对象.
+  * 3.DispatcherServler(前端控制器)调用,HandlerAdapter(处理器适配器)来执行Handler并返回ModelAndView给HandlerAdapter,然后HandlerAdapter再将ModelAndView返回给DispatcherServler(前端控制器).
+  * 4.DispatcherServler调用ViewResolver(视图解析器),将逻辑视图解析成物理视图并返回View对象.
+例如我们ModelAndView中存放的视图名为"user"(逻辑视图),通过ViewResolver(视图解析器),解析为"/WEB-INF/user.jsp"(物理视图).
+  * 5.前端控制器进行视图渲染,将模型数据填充到Request 域中.
+  * 6.前端控制器向用户响应结果.
+
