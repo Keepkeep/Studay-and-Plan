@@ -42,3 +42,7 @@ RequiredAnnotationBeanPostProcessor
 contextConfigLocation参数,也能实现配置文件的加载.
 contextConfigLocation是ContextLoaderListener类的属性.
 
+#### 5.视图解析器配置前缀和后缀
+!["xml"](../spring/spring_prefix.jpg)
+>如果配置了前缀和后缀,我们的TestController这个Handler中的modelAndView.setViewName("/WEB-INF/jsp/test.jsp");改为modelAndView.setViewName("test")
+
