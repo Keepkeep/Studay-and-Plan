@@ -46,7 +46,7 @@ contextConfigLocation是ContextLoaderListener类的属性.
 ![](../IMG/spring/spring_prefix.jpg)
 >如果配置了前缀和后缀,我们的TestController这个Handler中的modelAndView.setViewName("/WEB-INF/jsp/test.jsp");改为modelAndView.setViewName("test")
 
-#### 6.spring MVC
+#### >6.spring MVC
 * Spring MVC 虽然说是与Spring 无缝集成 但是配置还是单独分开的 ，也就有了之后的父子容器一说。先说下spring 的流程如图：
 ![](../IMG/spring/spring_mvc.jpg)
   * 1.用户发起请求到前端控制器(DispatcherServler),前端控制器负责接收用户请求与响应.
@@ -57,4 +57,101 @@ contextConfigLocation是ContextLoaderListener类的属性.
 例如我们ModelAndView中存放的视图名为"user"(逻辑视图),通过ViewResolver(视图解析器),解析为"/WEB-INF/user.jsp"(物理视图).
   * 5.前端控制器进行视图渲染,将模型数据填充到Request 域中.
   * 6.前端控制器向用户响应结果.
+	>>6.1 Spring MVC前端控制器配置
+	```xml
+	<servlet>
+		<servlet-name>springMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath*:spring/spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMVC</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	```
+	>>>如果不配置contextConfigLocation默认加载的是/WEB-INF/servlet名称-servlet.xml.例如:springMvc-servlet.xml.
+	* url-pattern配置有三种:
+	* 1.*.do 访问以.do结尾的由DispatcherServlet进行解析.
+	* 2./(斜杠) 所有访问的地址都由DispatcherServlet进行解析,对于静态的文件解析需要配置,不让DispatcherServlet进行解析.
+	>>>>注意:使用此种方式可以实现 RESTful风格的url.
+	3./* 这样配置不对,使用这种配置,最终要转发到一个jsp页面时,仍然会由DispatcherServlet进行解析,但是不能根据这个jsp页面找 到handler所以会报错.
+	
+#### 6.2 Spring-DispatcherServler源码分析
+- 通过前端控制器源码分析Spring mvc执行过程.
 
+- 第一步:前端控制器接收请求,会调用doDispatch方法.
+
+```java
+protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		HttpServletRequest processedRequest = request;
+		HandlerExecutionChain mappedHandler = null;
+		boolean multipartRequestParsed = false;
+		WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);
+		try {
+			ModelAndView mv = null;
+			Exception dispatchException = null;
+			try {
+				processedRequest = checkMultipart(request);
+				multipartRequestParsed = (processedRequest != request);
+				// Determine handler for the current request.
+				mappedHandler = getHandler(processedRequest);
+				if (mappedHandler == null || mappedHandler.getHandler() == null) {
+					noHandlerFound(processedRequest, response);
+					return;
+				}
+				// Determine handler adapter for the current request.
+				HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
+				// Process last-modified header, if supported by the handler.
+				String method = request.getMethod();
+				boolean isGet = "GET".equals(method);
+				if (isGet || "HEAD".equals(method)) {
+					long lastModified = ha.getLastModified(request, mappedHandler.getHandler());
+					if (logger.isDebugEnabled()) {
+						logger.debug("Last-Modified value for [" + getRequestUri(request) + "] is: " + lastModified);
+					}
+					if (new ServletWebRequest(request, response).checkNotModified(lastModified) && isGet) {
+						return;
+					}
+				}
+				if (!mappedHandler.applyPreHandle(processedRequest, response)) {
+					return;
+				}
+				// Actually invoke the handler.
+				mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+				if (asyncManager.isConcurrentHandlingStarted()) {
+					return;
+				}
+				applyDefaultViewName(processedRequest, mv);
+				mappedHandler.applyPostHandle(processedRequest, response, mv);
+			}
+			catch (Exception ex) {
+				dispatchException = ex;
+			}
+			processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+		}
+		catch (Exception ex) {
+			triggerAfterCompletion(processedRequest, response, mappedHandler, ex);
+		}
+		catch (Error err) {
+			triggerAfterCompletionWithError(processedRequest, response, mappedHandler, err);
+		}
+		finally {
+			if (asyncManager.isConcurrentHandlingStarted()) {
+				// Instead of postHandle and afterCompletion
+				if (mappedHandler != null) {
+					mappedHandler.applyAfterConcurrentHandlingStarted(processedRequest, response);
+				}
+			}
+			else {
+				// Clean up any resources used by a multipart request.
+				if (multipartRequestParsed) {
+					cleanupMultipart(processedRequest);
+				}
+			}
+		}
+	}
+```
