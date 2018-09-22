@@ -21,3 +21,24 @@ RequiredAnnotationBeanPostProcessor
 #### 3.\<mvc:annotation-driven /\>
 它会自动注DefaultAnnotationHandlerMappi和 AnnotationMethodHandlerAdapter
 >结论：在spring-servlet.xml中只需要扫描所有带@Controller注解的类，在applicationContext中可以扫描所有其他带有注解的类（也可以过滤掉带@Controller注解的类）。
+
+#### 4.Spring监听类
+>org.srpingframework.web.context.ContextLoaderListener 
+该监听器实现了ServletContextListener接口，可以在Web容器启动的时候初始化Spring容器。
+* web.xml配置
+- \<!-- 配置环境参数,指定Spring配置文件的位置 --\>
+```xml
+<context-param> 
+<param-name>contextConfigLocation</param-name> 
+<param-value>/WEB-INF/Spring-*.xml</param-value> 
+</context-param>
+<!-- 配置Spring的ContextLoaderListener监听器,初始化Spring容器 -->
+<listener> 
+<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
+</listener>
+```
+其中,contextConfigLocation参数用来指定Spring配置文件的路径.可以写文件全名,也可以使用"星号"通配符来加载多个spring的配置文件.
+>注意：如果没有指定 contextConfigLocation 参数,ContextLoaderListener默认会查找/WEB-INF/applicationContext.xml.换句话说,如果我们将Spring 的配置文件命名为applicationContext.xml并放在WEB-INF目录下,即使不指定
+contextConfigLocation参数,也能实现配置文件的加载.
+contextConfigLocation是ContextLoaderListener类的属性.
+
