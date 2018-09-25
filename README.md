@@ -12,7 +12,7 @@
 - [MySQL基础入门](MySQL-basic.md)
 
 ####  Oracle
-- [Oracle基础入门](./MDDoc/Oracle-basic.md)
+- [Oracle基础入门](./MDDoc/Oracle-basis.md)
 
 ####  学单词
 - [单词本](./MDDoc/word-bastic.md)
