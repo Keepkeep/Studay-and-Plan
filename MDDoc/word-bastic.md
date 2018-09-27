@@ -100,3 +100,25 @@ capable of  有什么的能力
 advanced  高效 
 
 modify  修改的
+
+- 2018-9-25
+access v  访问   accessed  adj 访问的   accessible  adj 可访问的
+
+- 2018-9-27
+enterprise    企（事）业单位; 事业，计划; 事业心，进取心;
+
+Enterprise Architect  企业架构
+
+Technology Policy    技术政策 
+
+no content  无内容
+
+viewer 电视观众   \[ˈvjuɚ\] ; 观看者，观察者; 阅读器; 看片机
+
+Plain Ordinary Java Object，普通java对象   POJO  
+
+Operation  \[ˌɑpəˈreɪʃn\]  操作，经营; 手术; [数]运算; 作用;
+
+
+
+
