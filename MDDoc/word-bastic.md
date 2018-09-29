@@ -92,6 +92,7 @@ Injection  注入   Dependency Injection  依赖注入
 
 
 2018-9-15
+
 brief 简明 brief overview  简明概要
 basic necessity   基本必要的
 
@@ -105,6 +106,7 @@ modify  修改的
 access v  访问   accessed  adj 访问的   accessible  adj 可访问的
 
 - 2018-9-27
+
 enterprise    企（事）业单位; 事业，计划; 事业心，进取心;
 
 Enterprise Architect  企业架构
@@ -118,6 +120,30 @@ viewer 电视观众   \[ˈvjuɚ\] ; 观看者，观察者; 阅读器; 看片机
 Plain Ordinary Java Object，普通java对象   POJO  
 
 Operation  \[ˌɑpəˈreɪʃn\]  操作，经营; 手术; [数]运算; 作用;
+
+The Solution  解决
+
+asynchronous event-driven   异步事件驱动
+
+> 2018-9-29
+
+tricks   [trɪks]  n  戏法( trick的名词复数 ); 把戏; 计谋; 诀窍; v  哄骗，欺骗( trick的第三人称单数 ); 打扮;
+
+common  通常一般的  
+
+tips and tricks  要诀 和技巧
+
+amend  vt.& vi.  改良，修改; 修订;
+
+Intelligent load balancing   智能负载均衡 
+
+High extensibility  搞扩张性
+
+high-performance     高性能
+
+Manual adj.  用手的; 手制的，手工的;  体力的;  n.  手册; 指南; 
+
+
 
 
 
