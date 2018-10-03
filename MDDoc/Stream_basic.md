@@ -12,13 +12,15 @@
 
 - 流的操作都是延迟查找  ，很多流的操作（过滤、映射、排序等）都是可以延迟实现的 （流的操作分为两类 ：1.延时求值； 2.及时求值）
 
-####  compartor
-
-- select name from  suduent  where age > 20 and  sex ='M' order by age desc;
+####  compare
 
 - 描述性语言
 
-  student.stream.filter(student -> student.getAge > 20).filter(student ->    student.getSex.equals("M")).sorted(...).forEach(student -> system.out.print(studemt.getName))
+- select name from  suduent  where age > 20 and  sex ='M' order by age desc;
+
+- stream 与 sql 类比
+
+- student.stream.filter(student -> student.getAge > 20).filter(student ->    student.getSex.equals("M")).sorted(...).forEach(student -> system.out.print(studemt.getName))
 
 
 
