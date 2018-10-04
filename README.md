@@ -5,7 +5,7 @@
 
 ## 目录
 ####  Stream
-- [Stream基础学习](./MDDOC/Stream_basic.md)
+- [Stream基础学习](./MDDoc/Stream_basic.md)
 ####  Spring
 - [Spring基础入门](./MDDoc/Spring-basic.md)
 ####  Git
