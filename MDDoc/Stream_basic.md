@@ -94,10 +94,11 @@ return that, or may return a new result container.
 @return a function which combines two partial results into a combined result
 ```
 > 各个部分结果 合并成一个结果返回一个新的结果或者将两个 部分折叠到一个结果中
-      如四个线程分别有四个结果 1，2,3,4  合并可能出现
-   1, 2 ->1  这种折叠到之前的一个结果中
-   1, 4 ->5  这种返回一个新的结果中
-  5, 3 ->6  同上返回一个新的结果中
+
+* 如四个线程分别有四个结果 1，2,3,4  合并可能出现
+* 1, 2 ->1  这种折叠到之前的一个结果中
+* 1, 4 ->5  这种返回一个新的结果中
+* 5, 3 ->6  同上返回一个新的结果中
 
 
 - collector 作为collect 的参数 (重要) 是一个泛型接口 有三个参数<T,A,R>
