@@ -143,6 +143,85 @@ high-performance     高性能
 
 Manual adj.  用手的; 手制的，手工的;  体力的;  n.  手册; 指南; 
 
+> 2018-9-30
+
+calories   n.  大卡( calorie的名词复数 ); 千卡（食物所产生的能量单位）; 卡路里; 卡（热量单位）; 
+
+automatical 自动的
+
+
+> 2018 -10-1
+
+accept  vi.   承认; 同意; 承兑;  vt  接受; 承认; 承担; 承兑;
+
+consumer  消费
+
+Unlike  prep. 与... 不同   adj.  不同的; 相异的; 不相似的;
+
+performance  执行
+
+Performs this operation on the given argument.  给定参数执行此操作
+
+explicit  [ɪkˈsplɪsɪt] adj.  明确的，清楚的; 直言的; 详述的; 不隐瞒的; explicit type argument sttring can be replaceed with <>   可以用<> 代替里类型参数
+
+
+pipeline  管道 ，渠道
+
+produces  [prəˈdju:siz]  生产( produce的第三人称单数 ); 产生; 制作; 创作;
+
+represents   v 表现( represent的第三人称单数 ); 代表; 体现; 作为…的代表;
+
+> 2018-10-2
+
+identity   身份; [逻]同一性; 个性; [数]恒等（式）;
+
+evaluates  [iˈvæljueits]   评价( evaluate的第三人称单数 ); 求…的值（或数）; 对…评价; [数学、逻辑学]求…的数值;
+
+logical 逻辑（上）的
+
+
+evaluated  adj.  估价的，已评估的;  v.  评价( evaluate的过去式和过去分词 ); 求…的值（或数）; 对…评价; [数学、逻辑学]求…的数值;
+
+negation  n.  反面; 对立面; 否定; 否认;
+
+supplier  n.提供商，供应者
+
+optional  可选择的
+
+less than  小于  lt   greater than  大于 gt
+
+reduction  减少; 降低; [数学]约简; [摄影术]减薄;
+ 
+mutable  可变的   mutable container 可变的容器
+
+equivalent  to  英 [iˈkwivələnt tu:]   等价于  
+
+Collectors  收集者
+
+> 2018-10-4
+
+partitions n.  分开( partition的名词复数 ); 分割; 分割物; 隔墙;
+
+mutable  reduction operations 可变的汇集操作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
