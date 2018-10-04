@@ -85,6 +85,20 @@ a final transform on the result.  They are:
 ```
 > 理解 collector是由四个函数组成的，其中supplier用于提供可变容器的，ccumulator 不短往流中累积元素，combiner 用于线程并发将多个部分结果合并成一个，finisher 完成器可有可无的操作 ，不提供一会提供一个默认，将累积的中间结果转换为最终的一种表示
 
+- combiner
+
+```java 
+A function that accepts two partial results and merges them.  The
+combiner function may fold state from one argument into the other and
+return that, or may return a new result container.
+@return a function which combines two partial results into a combined result
+```
+--- 各个部分结果 合并成一个结果返回一个新的结果或者将两个 部分折叠到一个结果中
+---  如四个线程分别有四个结果 1，2,3,4  合并可能出现
+---  1， 2 ->1  这种折叠到之前的一个结果中
+---  1, 4 ->5  这种返回一个新的结果中
+---  5, 3 ->6  同上返回一个新的结果中
+
 
 - collector 作为collect 的参数 (重要) 是一个泛型接口 有三个参数<T,A,R>
 	-- 
