@@ -21,12 +21,12 @@
 - 需要学习的
 	- MySql 5.X
 	- Oracle 11G
-	- [Spring 4.X](./Spring_basic.md)
+	- [Spring 4.X](./Spring-basic.md)
 	- [Java 8 函数式编程](./Stream_basic.md)
-	- [git学习](./git-bastic.md)
-	- spring boot学习
-	- linux学习
-	- redis学习
+	- [Git学习](./git-bastic.md)
+	- Spring boot学习
+	- Linux学习
+	- Redis学习
 
 
 

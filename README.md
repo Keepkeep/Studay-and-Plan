@@ -16,8 +16,12 @@
 ####  Oracle
 - [Oracle基础入门](./MDDoc/Oracle-basis.md)
 
+
 ####  学单词
 - [单词本](./MDDoc/word-bastic.md)
+
+#### 2018下半年 规划
+- [2018下半年规划](./2018-Summary.md)
 
 
 
