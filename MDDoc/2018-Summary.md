@@ -17,6 +17,16 @@
 #### 浴火重生
 小白都是需要经历一段磨砺。我这样的菜鸟虽然还是很菜！ 但是最近也成熟一点了!懂得自己要学什么了,知道学什么了。
 
+**2018剩下的学习内容安排**
+- 需要学习的
+	- MySql 5.X
+	- Oracle 11G
+	- [Spring 4.X](./Spring_basic.md)
+	- [Java 8 函数式编程](./Stream_basic.md)
+	- [git学习](./git-bastic.md)
+	- spring boot学习
+	- linux学习
+	- redis学习
 
 
 

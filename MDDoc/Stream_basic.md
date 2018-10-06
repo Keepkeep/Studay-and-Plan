@@ -85,6 +85,27 @@ a final transform on the result.  They are:
 ```
 > 理解 collector是由四个函数组成的，其中supplier用于提供可变容器的，ccumulator 不短往流中累积元素，combiner 用于线程并发将多个部分结果合并成一个，finisher 完成器可有可无的操作 ，不提供一会提供一个默认，将累积的中间结果转换为最终的一种表示
 
+* 为了保证串行和并行的操作的等价性：collector 要满足里两个条件： identity（同一性） 和associativity（结合性）
+
+ 1. 同一性 a==combiner.apply(a, supplier.get());
+ 
+ 2.结合性 如下：
+ ```java
+ 串行
+A a1 = supplier.get();
+accumulator.accept(a1, t1);
+accumulator.accept(a1, t2);
+R r1 = finisher.apply(a1);  // result without splitting
+并行
+A a2 = supplier.get();
+accumulator.accept(a2, t1);
+A a3 = supplier.get();
+accumulator.accept(a3, t2);
+R r2 = finisher.apply(combiner.apply(a2, a3));  // result with splitting
+最终 r1 == r2
+ ``` 
+
+
 #### combiner
 
 ```java 
@@ -93,7 +114,7 @@ combiner function may fold state from one argument into the other and
 return that, or may return a new result container.
 @return a function which combines two partial results into a combined result
 ```
-> 各个部分结果 合并成一个结果返回一个新的结果或者将两个 部分折叠到一个结果中
+> 各个部分结果 合并成一个结果返回一个新的结果或者将两个 部分折叠到一个结果中 如下：
 
 * 如四个线程分别有四个结果 1，2,3,4  合并可能出现
 * 1, 2 ->1  这种折叠到之前的一个结果中
@@ -102,9 +123,18 @@ return that, or may return a new result container.
 
 
 - collector 作为collect 的参数 (重要) 是一个泛型接口 有三个参数<T,A,R>
-	-- 
+```java
+@param <T> the type of input elements to the reduction operation
+@param <A> the mutable accumulation type of the reduction operation (often hidden as an implementation detail)
+@param <R> the result type of the reduction operation
+```
 
-- collect  是一个接口
+
+- collector  是一个接口
+
+- collectorimp 是collector为一个实现类 ，是一个内部静态类
+
+
 
 
 

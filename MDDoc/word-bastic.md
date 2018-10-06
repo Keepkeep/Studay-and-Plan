@@ -204,6 +204,8 @@ partitions n.  分开( partition的名词复数 ); 分割; 分割物; 隔墙;
 
 mutable  reduction operations 可变的汇集操作
 
+parallel  并行的实现
+
 
 
 
