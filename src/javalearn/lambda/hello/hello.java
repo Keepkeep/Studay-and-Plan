@@ -2,6 +2,7 @@ package javalearn.lambda.hello;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,16 @@ public class hello {
 	    
 	    //迭代
 	    List<String> languages = Arrays.asList("java","scala","python");
+	    
+	    languages.forEach(new Consumer<String>() {
+
+			@Override
+			public void accept(String t) {
+				System.out.println(t);
+				
+			}
+		});
+	    
         //before java8
 	    for(String each:languages) {
             System.out.println(each);
@@ -82,6 +93,9 @@ public class hello {
             return n + param;
         };
        System.out.println( calculate.calculate(10));
+       
+       //java8增强了接口，其中包括接口可添加default关键词定义的默认方法，这里我们需要注意，Lambda表达式内部不支持访问默认方法。
+       
     } 
 	
 	public static void filterTest(List<String> languages, Predicate<String> condition) {
