@@ -21,7 +21,7 @@
 - [单词本](./MDDoc/word-bastic.md)
 
 #### 2018下半年 规划
-- [2018下半年规划](./MDDOC/2018-Summary.md)
+- [2018下半年规划](./MDDoc/2018-Summary.md)
 
 
 
