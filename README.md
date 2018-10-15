@@ -7,7 +7,7 @@
 ####  Stream
 - [Stream基础学习](./MDDoc/Stream_basic.md)
 ####  Spring
-- [Spring基础入门](./MDDoc/Spring-base.md)
+- [Spring基础入门](./MDDoc/Spring_base.md)
 ####  Git
 - [GIT](./MDDoc/git-bastic.md)
 ####  MySQL
