@@ -1,7 +1,7 @@
 # Java generic 学习笔记
 > 记录每一天的成长！
 
--[dog]{../../IMG/moji/java-generic-dog.jpg}
+![dog]{../../IMG/moji/java-generic-dog.jpg}
 
 ## 目录
 
@@ -169,7 +169,7 @@ public class Demo {
   *     <? super Integer>：只能存储Interger或者是Interger的父类元素.   泛型的下限
   *     <? extends Number>：只能存储Number或者Number以下的子类元素.   泛型的上限
   * */
-public class Demo19 {
+public class Demo {
      public static void main(String[] args) {
          //泛型的上线
          ArrayList<Double> list = new ArrayList<Double>();//Number最大，所以<>里的泛型是子类的什么类型都行（上线，看关键字extends）
