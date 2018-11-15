@@ -207,6 +207,12 @@ mutable  reduction operations 可变的汇集操作
 parallel  并行的实现
 
 
+> 2018-10-18
+
+In the case of implementations   在实际情况下
+
+
+
 
 
 
