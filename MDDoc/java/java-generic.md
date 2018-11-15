@@ -1,7 +1,7 @@
 # Java generic 学习笔记
 > 记录每一天的成长！
 
-![dog]{../../IMG/moji/java-generic-dog.jpg}
+![dog](../../IMG/moji/java-generic-dog.jpg)
 
 ## 目录
 
