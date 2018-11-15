@@ -5,8 +5,10 @@
 
 ## 目录
 
-#### File 入门
+#### File 基础
 - [File 简单介绍](./Java-File.md)
 
+#### Generic 基础
+- [Generic 基础](./java-generic.md)
 #### java  集合类
 - [java 集合类]()

@@ -11,7 +11,7 @@
 ####  Git
 - [GIT](./MDDoc/git-bastic.md)
 
-####  java
+####  java基础
 - [Java](./MDDoc/java/Java-base.md)
 
 ####  MySQL

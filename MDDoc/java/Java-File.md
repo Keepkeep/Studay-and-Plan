@@ -77,7 +77,28 @@
      }
  }
 ```
-#### 简单案例
+#### 简单案例(递归列出所有文件)
+```java
+public class FileDemo{
+    public static void main(String[] args){
+        File f =new File("e:\\test");
+        showDir(f);
+    }
+    public static void showDir(File dir){
+        System.out.println(dir);
+        File[] files =dir.listFiles();
+        for(File file:files){
+            if(file.isDirectory())
+                showDir(file);
+            else
+                System.out.println(file);
+        }
+    }
+}
+```
+
+
+
 
   
 
