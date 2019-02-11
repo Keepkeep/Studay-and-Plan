@@ -30,16 +30,17 @@
 	- [Git学习](./git-bastic.md)
 	- Spring boot作为重点学习
 	- Dubbo学习 配合这apache孵化的spring—cloud-alibaba来学习
-	- Linux学习 掌握基本的操作，进一步了解自动的东西
+	- Linux学习 掌握基本的操作，进一步了解自动的东西(还得向我，李哥多请教！)
 	- MySql 5.X 继续熟悉关系型数据库
 	- Oracle 11G
 	- Redis学习
 	- java jvm 初步了解学习
 	- Spring Cloud学习
-	
+	- 
 **2019读一些书**
 - 准备看的书
 	- 《并发编程之美》
+	- 《netty》
 	- 《redis技术内幕》 也就是老钱出的那本书
 	- 《一个人的朝圣》 
 	
