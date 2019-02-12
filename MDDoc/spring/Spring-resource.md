@@ -75,6 +75,7 @@ public interface ResourceLoader {
 	* ClassPathXmlApplicationContext：不指定前缀将返回默认的ClassPathResource资源，否则将根据前缀来加载资源；
 	* FileSystemXmlApplicationContext：不指定前缀将返回FileSystemResource，否则将根据前缀来加载资源；
 	* WebApplicationContext：不指定前缀将返回ServletContextResource，否则将根据前缀来加载资源；
+	
       * 其他：不指定前缀根据当前上下文返回Resource实现，否则将根据前缀来加载资源。
   
 ResourceLoader
@@ -114,8 +115,8 @@ public class ResourceBean3 {
 
 - Ant路径通配符支持“？”、“*”、“**”，注意通配符匹配不包括目录分隔符“/”：
 	- “?”：匹配一个字符，如“config?.xml”将匹配“config1.xml”；
-	- “*”：匹配零个或多个字符串，如“cn/*/config.xml”将匹配“cn/javass/config.xml”，但不匹配匹配“cn/config.xml”；而“cn/config-*.xml”将匹配“cn/config-dao.xml”；
-	- “**”：匹配路径中的零个或多个目录，如“cn/**/config.xml”将匹配“cn /config.xml”，也匹配“cn/javass/spring/config.xml”；而“cn/javass/config-**.xml”将匹配“cn/javass/config-dao.xml”，即把“**”当做两个“*”处理。
+	- “\*”：匹配零个或多个字符串，如“cn/*/config.xml”将匹配“cn/javass/config.xml”，但不匹配匹配“cn/config.xml”；而“cn/config-*.xml”将匹配“cn/config-dao.xml”；
+	- “\*\*”：匹配路径中的零个或多个目录，如“cn/**/config.xml”将匹配“cn /config.xml”，也匹配“cn/javass/spring/config.xml”；而“cn/javass/config-**.xml”将匹配“cn/javass/config-dao.xml”，即把“**”当做两个“*”处理。
 	
 	
 	
