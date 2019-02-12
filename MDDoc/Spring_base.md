@@ -12,7 +12,7 @@
 - [Spring 数据源配置](./Spring-dataSource.md)
 
 ### Spring resource学习
-- [Spring - resource](../spring/Spring-resource.md)
+- [Spring - resource](./spring/Spring-resource.md)
 
 
 
