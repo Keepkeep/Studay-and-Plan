@@ -116,7 +116,7 @@ public class ResourceBean3 {
 - Ant路径通配符支持“？”、“*”、“**”，注意通配符匹配不包括目录分隔符“/”：
 	- “?”：匹配一个字符，如“config?.xml”将匹配“config1.xml”；
 	- “\*”：匹配零个或多个字符串，如“cn/*/config.xml”将匹配“cn/javass/config.xml”，但不匹配匹配“cn/config.xml”；而“cn/config-*.xml”将匹配“cn/config-dao.xml”；
-	- “\*\*”：匹配路径中的零个或多个目录，如“cn/**/config.xml”将匹配“cn /config.xml”，也匹配“cn/javass/spring/config.xml”；而“cn/javass/config-**.xml”将匹配“cn/javass/config-dao.xml”，即把“**”当做两个“*”处理。
+	- “\*\*”：匹配路径中的零个或多个目录，如“cn/\*\*/config.xml”将匹配“cn /config.xml”，也匹配“cn/javass/spring/config.xml”；而“cn/javass/config-\*\*.xml”将匹配“cn/javass/config-dao.xml”，即把“**”当做两个“*”处理。
 	
 	
 	
