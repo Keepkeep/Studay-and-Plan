@@ -1,4 +1,4 @@
-# 个人 2018 规划 
+# 个人 学习 规划 
 
 ![Image text](./IMG/moji/cat.jpg)
 
