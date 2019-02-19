@@ -87,7 +87,7 @@
   	- 引发的血案 ：
   		由于项目集成DASC(dsc)，出于安全的考虑，对于浏览器的一些响应头做了一下处理。如添加下：主要是X-contenx-Type-Option:nosniff，Content—Type
   		
- ![](../../IMG/spring/http.jpg)
+ ![](../../IMG/spring/hhtp.jpg)
  JSONP 就请求不行了
  ![](../../IMG/spring/cros.jpg)
  
