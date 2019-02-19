@@ -86,9 +86,11 @@
 		
   	- 引发的血案 ：
   		由于项目集成DASC(dsc)，出于安全的考虑，对于浏览器的一些响应头做了一下处理。如添加下：主要是X-contenx-Type-Option:nosniff，Content—Type
- ![](../IMG/spring/http.jpg)
+  		
+ ![](../../IMG/spring/http.jpg)
  JSONP 就请求不行了
- ![](../IMG/spring/cros.jpg)
+ ![](../../IMG/spring/cros.jpg)
+ 
  本来JSONP 用来处理跨域问题 ，这下可好，跨域倒是解决了，报的错也是个什么东西,定位MIME这个是个什么东西 和ContextType 有关系。
  
 MIME: 
